@@ -17,11 +17,11 @@ echo "- HCI interface: "$HCI_INTERFACE
 echo "- Pairing mode: "$PAIRING_MODE
 echo "- PIN code: "$PIN_CODE
 
-# Bail if provided HCI interface is invalid
+# Bail out if provided HCI interface is invalid
 VALID_HCI=$(btmgmt info | grep "$HCI_INTERFACE")
 if [[ -z "$VALID_HCI" ]]; then
-  IDLE_MESSAGE="Idling, s elected HCI interface is invalid: $HCI_INTERFACE"
-  balena-idle --message "$IDLE_MESSAGE"
+  echo "Exiting... selected HCI interface is invalid: $HCI_INTERFACE"
+  exit 0
 fi
 
 # Set device name
