@@ -51,10 +51,13 @@ The audio primitive has been tested to work on the following devices:
 
 | Device Type  | Status |
 | ------------- | ------------- |
-| Raspberry Pi (v1 / Zero / Zero W) |  |
-| Raspberry Pi 2 |  |
+| Raspberry Pi 1 / Zero | |
+| Raspberry Pi Zero W | ✔ |
+| Raspberry Pi 2 | ✔ <sup>*</sup> |
 | Raspberry Pi 3 | ✔ |
 | Raspberry Pi 4 | ✔ |
-| Intel NUC | ✔ (requires USB bluetooth dongle) |
+| Jetson Nano | ✔ <sup>*</sup> |
+| BeagleBone Black | ✔ <sup>*</sup> |
+| Intel NUC | ✔ <sup>*</sup> |
 
-
+*: Requires external USB bluetooth dongle
