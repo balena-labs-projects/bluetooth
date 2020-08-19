@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  bluetooth:
+    build: .
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    labels:
+      io.balena.features.dbus: 1

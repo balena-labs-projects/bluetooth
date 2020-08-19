@@ -18,8 +18,9 @@ echo "- Pairing mode: "$PAIRING_MODE
 echo "- PIN code: "$PIN_CODE
 
 # Bail out if provided HCI interface is invalid
-VALID_HCI=$(btmgmt info | grep "$HCI_INTERFACE")
-if [[ -z "$VALID_HCI" ]]; then
+BT_INFO=$(btmgmt info)
+echo "$BT_INFO"
+if [[ "$BT_INFO" != *"$HCI_INTERFACE"* ]]; then
   echo "Exiting... selected HCI interface is invalid: $HCI_INTERFACE"
   exit 0
 fi
