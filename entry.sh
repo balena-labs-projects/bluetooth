@@ -4,8 +4,17 @@ set -e
 # Run balena base image entrypoint script
 /usr/bin/entry.sh echo "Running balena base image entrypoint..."
 
+function reset_hci_interface () {
+  local INTERFACE=$1
+
+  echo "Resetting $i"
+  btmgmt --index $i discov off > /dev/null
+  btmgmt --index $i pairable off > /dev/null
+  btmgmt --index $i connectable off > /dev/null
+}
+
 # Bluetooth primitive environment variables and defaults
-DEVICE_NAME=${BLUETOOTH_DEVICE_NAME:-$(printf "balenaSound %s"$(hostname | cut -c -4))}
+DEVICE_NAME=${BLUETOOTH_DEVICE_NAME:-$(printf "balenaOS %s"$(hostname | cut -c -4))}
 HCI_INTERFACE=${BLUETOOTH_HCI_INTERFACE:-"hci0"}
 PAIRING_MODE=${BLUETOOTH_PAIRING_MODE:-"SSP"}
 PIN_CODE=${BLUETOOTH_PIN_CODE:-"0000"}
@@ -17,14 +26,25 @@ echo "- HCI interface: "$HCI_INTERFACE
 echo "- Pairing mode: "$PAIRING_MODE
 echo "- PIN code: "$PIN_CODE
 
+# Get available interfaces
+HCI_INTERFACES=$(btmgmt info | awk 'BEGIN { ORS=" " }; /^ *hci/ {gsub(":", ""); print $1}')
+FS=' ' read -r -a HCI_INTERFACES <<< "$HCI_INTERFACES"
+echo "Available HCI interfaces: "${HCI_INTERFACES[@]}
+
 # Bail out if provided HCI interface is invalid
-BT_INFO=$(btmgmt info)
-echo "$BT_INFO"
-if [[ "$BT_INFO" != *"$HCI_INTERFACE"* ]]; then
+if [[ ! "${HCI_INTERFACES[@]}" =~ "$HCI_INTERFACE" ]]; then
   echo "Exiting... selected HCI interface is invalid: $HCI_INTERFACE"
   exit 0
 fi
 
+# Reset all interfaces. This helps shut off interfaces from previous runs.
+for i in "${HCI_INTERFACES[@]}"
+do
+  reset_hci_interface "$i"
+done
+
+# Configure selected interface
+echo "Configuring selected interface: $HCI_INTERFACE"
 # Set device name
 btmgmt --index $HCI_INTERFACE name "$DEVICE_NAME"
 
