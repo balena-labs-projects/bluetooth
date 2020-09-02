@@ -1,10 +1,10 @@
-# balena bluetooth primitive
+# balena bluetooth block
 
 balenaOS optimized bluetooth agent. Easiest way to add bluetooth to your projects!
 
 ## Features
 
-The bluetooth primitive is a Docker image that runs a pre-configured bluetooth agent, some of it's features are:
+The bluetooth block is a Docker image that runs a pre-configured bluetooth agent, some of it's features are:
 
 - Handle bluetooth pairing and connection with other devices
 - Support for any bluetooth interface (built-in or USB)
@@ -47,7 +47,7 @@ The following environment variables allow some degree of configuration:
 | `BLUETOOTH_PIN_CODE` | PIN code used for Legacy Pairing. Must be numeric and up to six digits (1 - 999999). | `0000` | - |
 
 ## Supported devices
-The audio primitive has been tested to work on the following devices:
+The bluetooth block has been tested to work on the following devices:
 
 | Device Type  | Status |
 | ------------- | ------------- |

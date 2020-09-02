@@ -13,7 +13,7 @@ function reset_hci_interface () {
   btmgmt --index $i connectable off > /dev/null
 }
 
-# Bluetooth primitive environment variables and defaults
+# Bluetooth block environment variables and defaults
 DEVICE_NAME=${BLUETOOTH_DEVICE_NAME:-$(printf "balenaOS %s"$(hostname | cut -c -4))}
 HCI_INTERFACE=${BLUETOOTH_HCI_INTERFACE:-"hci0"}
 PAIRING_MODE=${BLUETOOTH_PAIRING_MODE:-"SSP"}
