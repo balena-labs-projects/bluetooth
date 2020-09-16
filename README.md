@@ -21,7 +21,7 @@ version: '2'
 services:
 
   bluetooth:
-    image: balenaplayground/balenalabs-audio:raspberrypi4-64  # See supported devices for other archs
+    image: balenablocks/bluetooth:raspberrypi4-64  # See supported devices for other archs
     network_mode: host
     cap_add:
       - NET_ADMIN
