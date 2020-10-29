@@ -24,9 +24,9 @@ DBUS_INTERFACE_ADAPTER = "org.bluez.Adapter1"
 
 # Agent default settings
 capabilities = [ "KeyboardDisplay", "NoInputNoOutput" ]
-DEFAULT_CAPABILITY = "NoInputNoOutput"
-DEFAULT_INTERFACE = "hci0"
-DEFAULT_PIN_CODE = "0000"
+DEFAULT_CAPABILITY = os.getenv("AGENT_CAPABILITY", "NoInputNoOutput")
+DEFAULT_INTERFACE = os.getenv("HCI_INTERFACE", "hci0")
+DEFAULT_PIN_CODE = os.getenv("PIN_CODE", "0000")
 
 # DBus helper functions
 def dbus_get_interface(bus_name, object_name, interface_name):

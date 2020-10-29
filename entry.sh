@@ -71,10 +71,4 @@ if [[ "${1#-}" != "$1" ]]; then
   set -- bluetooth-agent "$@"
 fi
 
-# Set bluetooth-agent flags if we are running it
-if [[ "$1" == *"bluetooth-agent"* ]]; then
-  shift
-  set -- python bluetooth-agent --interface $HCI_INTERFACE --capability $AGENT_CAPABILITY --pincode $PIN_CODE "$@"
-fi
-
 exec "$@"

@@ -16,4 +16,4 @@ COPY . .
 RUN chmod +x /usr/src/bluetooth-agent
 
 ENTRYPOINT [ "/bin/bash", "/usr/src/entry.sh" ]
-CMD [ "bluetooth-agent" ]
+CMD [ "/usr/src/bluetooth-agent" ]

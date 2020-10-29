@@ -1,6 +1,6 @@
 # balena bluetooth block
 
-balenaOS optimized bluetooth agent. Easiest way to add bluetooth to your projects!
+balenaOS optimized bluetooth agent. Easiest way to add bluetooth pairing to your projects!
 
 ## Features
 
@@ -35,6 +35,22 @@ services:
 
 
 ## Customization
+### Extend image configuration
+
+You can extend the `bluetooth` block to include custom configuration as you would with any other `Dockerfile`. Just make sure you don't override the `ENTRYPOINT` as it contains important system configuration.
+
+Here are some of the most common extension cases: 
+
+- Start the bluetooth daemon from your own bash script:
+
+```Dockerfile
+FROM balenablocks/bluetooth:%%BALENA_MACHINE_NAME%%
+
+# Be sure to run exec /usr/src/bluetooth-agent in your script
+COPY start.sh /usr/src/start.sh
+CMD [ "/bin/bash", "/usr/src/start.sh" ]
+```
+
 ### Environment variables
 
 The following environment variables allow some degree of configuration:
