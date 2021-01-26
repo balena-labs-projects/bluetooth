@@ -9,13 +9,12 @@ services:
       - NET_ADMIN
     labels:
       io.balena.features.dbus: 1
-    environment:
-      BLUETOOTH_RECONNECT_WAIT: 10
-
+  
+  # Only for testing, remove before merging
   audio:
-      image: balenablocks/audio:raspberrypi4-64  # See supported devices for other archs
+      image: balenablocks/audio:raspberrypi4-64
       privileged: true
       labels:
-        io.balena.features.dbus: 1  # Only required for bluetooth support
+        io.balena.features.dbus: 1
       ports:
-        - 4317:4317                 # Only required if using PA over TCP socket
+        - 4317:4317
