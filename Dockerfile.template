@@ -10,7 +10,7 @@ ENV PYTHONPATH "${PYTHONPATH}:/usr/lib/python3.8/site-packages"
 RUN install_packages bluez bluez-btmgmt py3-dbus py3-gobject3
 
 # For local development
-#dev-cmd-live=python bluetooth-agent || balena-idle
+#dev-cmd-live=balena-idle
 
 COPY . .
 RUN chmod +x /usr/src/bluetooth-agent

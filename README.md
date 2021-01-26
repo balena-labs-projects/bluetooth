@@ -4,11 +4,14 @@ balenaOS optimized bluetooth agent. Easiest way to add bluetooth pairing to your
 
 ## Features
 
-The bluetooth block is a Docker image that runs a pre-configured bluetooth agent, some of it's features are:
+The bluetooth block is a Docker image that runs a pre-configured bluetooth pairing agent, some of it's features are:
 
 - Handle bluetooth pairing and connection with other devices
 - Support for any bluetooth interface (built-in or USB)
 - Uses DBus to communicate with balenaOS bluetooth daemon
+- Reconnect on boot to known and trusted devices
+
+Note that this block *does not* deal with the bluetooth "data layer". Your application will need to handle the data stream corresponding to the desired bluetooth profile. For example, the [`audio` block](https://github.com/balenablocks/audio) takes an already paired and connected bluetooth device and sets it up as an A2DP audio source.
 
 ## Usage
 
