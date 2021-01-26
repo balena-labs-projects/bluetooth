@@ -46,7 +46,7 @@ def dbus_get_property(bus_name, object_name, interface_name, prop_name):
     return props.Get(interface_name, prop_name)
 
 def dbus_get_all_properties(bus_name, object_name, interface_name):
-  props = dbus_get_interface(bus_name, object_name, "org.freedesktop.DBus.Properties")
+  props = dbus_get_interface(bus_name, object_name, DBUS_INTERFACE_PROPERTIES)
   return props.GetAll(interface_name)
 
 def dbus_filter_objects_by_interface(objects, interface_name):
