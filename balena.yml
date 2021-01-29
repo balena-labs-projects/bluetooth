@@ -1,0 +1,21 @@
+version: "2"
+slug: "bluetooth"
+name: "bluetooth"
+type: "sw.application"
+assets:
+  - url: "https://github.com/balenablocks/bluetooth"
+    name: "repository"
+  - url: "https://raw.githubusercontent.com/balenablocks/bluetooth/master/logo.png"
+    name: "logo"
+data:
+  description: "Optimized bluetooth agent for balenaOS. Easiest way to add bluetooth pairing to your projects! Based on BlueZ 5.0."
+  defaultDeviceType: "raspberrypi4-64"
+  supportedDeviceTypes:
+    - "raspberry-pi"
+    - "raspberry-pi2"
+    - "raspberrypi3"
+    - "raspberrypi3-64"
+    - "raspberrypi4-64"
+    - "intel-nuc"
+    - "jetson-nano"
+    - "beaglebone-black"
