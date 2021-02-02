@@ -75,6 +75,7 @@ The bluetooth block has been tested to work on the following devices:
 | Raspberry Pi 2 | ✔ <sup>*</sup> |
 | Raspberry Pi 3 | ✔ |
 | Raspberry Pi 4 | ✔ |
+| balenaFin | ✔ |
 | Jetson Nano | ✔ <sup>*</sup> |
 | BeagleBone Black | ✔ <sup>*</sup> |
 | Intel NUC | ✔ <sup>*</sup> |
