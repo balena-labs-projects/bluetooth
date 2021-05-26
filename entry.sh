@@ -14,7 +14,7 @@ function reset_hci_interface () {
 }
 
 # Bluetooth block environment variables and defaults
-DEVICE_NAME=${BLUETOOTH_DEVICE_NAME:-$(printf "balenaOS %s"$(hostname | cut -c -4))}
+DEVICE_NAME=${BLUETOOTH_DEVICE_NAME:-$(printf "balenaOS %s"$(echo "$BALENA_DEVICE_UUID" | cut -c -4))}
 HCI_INTERFACE=${BLUETOOTH_HCI_INTERFACE:-"hci0"}
 PAIRING_MODE=${BLUETOOTH_PAIRING_MODE:-"SSP"}
 PIN_CODE=${BLUETOOTH_PIN_CODE:-"0000"}
