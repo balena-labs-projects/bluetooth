@@ -64,6 +64,14 @@ The following environment variables allow some degree of configuration:
 | `BLUETOOTH_HCI_INTERFACE` | The bluetooth interface to be used. | `hci0` | - |
 | `BLUETOOTH_PAIRING_MODE` | The bluetooth paring mode:<br>- Secure Simple Pairing (SSP): Secure pinless pairing method<br>- Legacy Pairing: PIN code based authentication. Less secure but older devices might only support this mode. Note that this mode is no longer allowed on [iOS](https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf) devices. | `SSP` | `SSP`, `LEGACY` |
 | `BLUETOOTH_PIN_CODE` | PIN code used for Legacy Pairing. Must be numeric and up to six digits (1 - 999999). | `0000` | - |
+| `BLUETOOTH_CONNECT_DEVICE` | Initiate pairing with a device using the provided MAC address. Useful for devices that can't initiate the pairing process like bluetooth headsets. *| - | - |
+
+*: You can find the MAC address by checking the logs of the bluetooth block. Look for a line with your device's name, the address will be on the previous line. For example, in this case `70:BF:12:F6:91:24` is the MAC address of the `Jabra Evolve 75` headset
+
+```
+[bluetooth] hci0 dev_found: 70:BF:12:F6:91:24 type BR/EDR rssi -29 flags 0x0000 
+[bluetooth] name Jabra Evolve 75
+```
 
 ## Supported devices
 The bluetooth block has been tested to work on the following devices:

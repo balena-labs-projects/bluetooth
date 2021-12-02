@@ -18,6 +18,7 @@ DEVICE_NAME=${BLUETOOTH_DEVICE_NAME:-$(printf "balenaOS %s"$(echo "$BALENA_DEVIC
 HCI_INTERFACE=${BLUETOOTH_HCI_INTERFACE:-"hci0"}
 PAIRING_MODE=${BLUETOOTH_PAIRING_MODE:-"SSP"}
 PIN_CODE=${BLUETOOTH_PIN_CODE:-"0000"}
+CONNECT_DEVICE="$BLUETOOTH_CONNECT_DEVICE"
 
 echo "--- Bluetooth ---"
 echo "Starting bluetooth service with settings:"
@@ -64,6 +65,38 @@ else
   AGENT_CAPABILITY="NoInputNoOutput"
   btmgmt --index $HCI_INTERFACE ssp on
   echo "Pairing mode set to 'Secure Simple Pairing Mode (SSPM)'. PIN code is NOT required."
+fi
+
+# Handle pairing with devices that can't initiate the pairing process
+# Single device allowed via BLUETOOTH_CONNECT_DEVICE
+# Bluetooth connection is handled by bluetooth-agent
+if [[ -n "$CONNECT_DEVICE" ]]; then
+  echo "Bluetooth connect device provided, initiating pairing with device: $CONNECT_DEVICE"
+  PAIRED=$(bluetoothctl -- paired-devices | grep "$CONNECT_DEVICE" || echo "")
+
+  if [[ -z "$PAIRED" ]]; then
+    echo "Scanning for bluetooth devices... please set your device to pairing mode"
+    btmgmt --index $HCI_INTERFACE find
+    sleep 10
+  
+    for i in {1..5}
+    do
+      echo "($i/5) Attempting to pair with device: $CONNECT_DEVICE"
+      btmgmt --index $HCI_INTERFACE pair "$CONNECT_DEVICE"
+
+      PAIRED=$(bluetoothctl -- paired-devices | grep "$CONNECT_DEVICE" || echo "")
+      if [[ -n "$PAIRED" ]]; then
+        break
+      fi
+
+      sleep 10
+    done
+
+    btmgmt --index $HCI_INTERFACE stop-find
+    echo "Scanning off"
+  else
+    echo "Device already paired: $CONNECT_DEVICE"
+  fi
 fi
 
 # If command starts with an option, prepend bluetooth-agent to it
