@@ -15,6 +15,14 @@ Note that this block *does not* deal with the bluetooth "data layer". Your appli
 
 ## Usage
 
+#### Prebuilt images
+
+We maintain images for this block on balenaHub Container Registry. The images can be accessed using:
+
+`bh.cr/balenablocks/bluetooth-<arch>` or `bhcr.io/balenablocks/bluetooth-<arch>` where `<arch>` is one of: `rpi`, `armv7hf`, `aarch64` or `amd64`.
+
+For details on how to select a specific version or commit version of the image see our [documentation](https://github.com/balena-io/open-balena-registry-proxy/#usage).
+
 #### docker-compose file
 To use this image, create a container in your `docker-compose.yml` file as shown below:
 
@@ -24,7 +32,7 @@ version: '2'
 services:
 
   bluetooth:
-    image: balenablocks/bluetooth:raspberrypi4-64  # See supported devices for other archs
+    image: bh.cr/balenablocks/bluetooth-<arch>  # where <arch> is one of rpi, armv7hf, aarch64 or amd64
     network_mode: host
     cap_add:
       - NET_ADMIN
@@ -47,7 +55,7 @@ Here are some of the most common extension cases:
 - Start the bluetooth daemon from your own bash script:
 
 ```Dockerfile
-FROM balenablocks/bluetooth:%%BALENA_MACHINE_NAME%%
+FROM bh.cr/balenablocks/bluetooth-aarch64
 
 # Be sure to run exec /usr/src/bluetooth-agent in your script
 COPY start.sh /usr/src/start.sh
