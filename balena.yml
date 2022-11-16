@@ -1,7 +1,7 @@
 name: bluetooth
 description: >-
-  Optimized bluetooth agent for balenaOS. Easiest way to add bluetooth pairing
-  to your projects! Based on BlueZ 5.0.
+  Optimized bluetooth agent for balenaOS. Easiest way to add
+  bluetooth pairing to your projects! Based on BlueZ 5.0.
 type: sw.application
 assets:
   repository:
@@ -24,4 +24,4 @@ data:
     - intel-nuc
     - jetson-nano
     - beaglebone-black
-version: 0.1.7
+version: 0.1.8

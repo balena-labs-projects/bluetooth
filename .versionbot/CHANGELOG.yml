@@ -1,0 +1,243 @@
+- commits:
+    - subject: moving from balenablocks to balena-labs-projects
+      hash: 12f2b0cda9bd5536e4f74111e1d542a2ac8d3c8b
+      body: ""
+      footer:
+        Signed-off-by: Flynn Joffray <flynn@balena.io>
+        signed-off-by: Flynn Joffray <flynn@balena.io>
+        Change-type: patch
+        change-type: patch
+      author: Flynn Joffray
+      nested: []
+  version: 0.1.8
+  title: ""
+  date: 2022-11-16T00:12:20.524Z
+- version: 0.1.7
+  date: 2022-03-25T15:22:54Z
+  commits:
+    - hash: 6aa8813916c7885557b9c380660e9050366bfb3c
+      author: Tomás Migone
+      footers:
+        change-type: patch
+        signed-off-by: Tomás Migone <tomas@balena.io>
+      subject: Update README.md
+      body: null
+- version: 0.1.6
+- date: 2022-03-25T14:53:37Z
+- commits:
+    - hash: d61afa710f813b5889777a0b3c1b951281df3eaf
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: "meta: use balenaHub registry"
+- commits:
+    - body: null
+- version: 0.1.5
+- date: 2021-05-27T14:29:54Z
+- commits:
+    - hash: 97f83424e0f639bea6f201d2c8424b49077997f8
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: "meta: Update build script to multiarch"
+- commits:
+    - body: null
+- version: 0.1.4
+- date: 2021-05-26T18:39:45Z
+- commits:
+    - hash: 8052020d3fd62f28045784270aaeedfaad817156
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: Use UUID for broadcast name instead of hostname
+- commits:
+    - body: null
+- version: 0.1.3
+- date: 2021-05-17T12:51:44Z
+- commits:
+    - hash: b79f155457135badbd859c9baed657857fb6779b
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: "meta: change block logo"
+- commits:
+    - body: null
+- commits:
+    - hash: c6aef63fd739a7b20d25992f17103e0932bbe631
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: Update balena.yml
+- commits:
+    - body: null
+- version: 0.1.2
+- date: 2021-02-02T14:15:39Z
+- commits:
+    - hash: 6b6fac33b3730d6377fb790f01cf513aad1f490b
+- commits:
+    - author: Alex Bucknall
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Alex Bucknall <alexbucknall@balena.io>
+- commits:
+    - subject: Adds balenaFin to supported devices in balena.yml
+- commits:
+    - body: null
+- commits:
+    - hash: 765bf0b54c0e8201b63e7cb7876f94ae875af400
+- commits:
+    - author: Alex Bucknall
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Alex Bucknall <alexbucknall@balena.io>
+- commits:
+    - subject: Updates readme to reflect balenaFin in supported devices
+- commits:
+    - body: null
+- version: 0.1.1
+- date: 2021-01-29T13:02:47Z
+- commits:
+    - hash: 4edbbca8ba8300be138bed8d0722fb6385463374
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: "meta: Add hub files"
+- commits:
+    - body: null
+- version: 0.1.0
+- date: 2021-01-28T13:51:50Z
+- commits:
+    - hash: d28deb20f2b47c6dc0e6cc6cc642dec14be84595
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        connects-to: "#9"
+- commits:
+    - footers:
+        change-type: minor
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: Automatically reconnect to paired and trusted devices on reboot.
+- commits:
+    - body: null
+- commits:
+    - hash: 7440deaa87bcf58dcee0363e1b4ea7c292e1f709
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: Remove magic dbus string
+- commits:
+    - body: null
+- commits:
+    - hash: c41e07beb978e29faad4c523fb25382c87c46d91
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: Minor changes to compose file
+- commits:
+    - body: null
+- version: 0.0.3
+- date: 2021-01-19T15:59:45Z
+- commits:
+    - hash: ce8c9ad20811f28e7d6b571524cb4b4d083191d0
+- commits:
+    - author: Aaron Shaw
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Aaron Shaw <aaron@balena.io>
+- commits:
+    - subject: "meta: add tinkerboard builds"
+- commits:
+    - body: "add builds for asus-tinker-board and asus-tinker-board-s\r
+
+        \r"
+- version: 0.0.2
+- date: 2020-11-27T17:56:35Z
+- commits:
+    - hash: 87e428aacca382ace7c30438279e7131b0edd8f9
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: "meta: enable versionbot"
+- commits:
+    - body: null
+- commits:
+    - hash: c69f0887c95ad211c38018bf6de58582ef84805e
+- commits:
+    - author: Tomás Migone
+- commits:
+    - footers:
+        change-type: patch
+- commits:
+    - footers:
+        signed-off-by: Tomás Migone <tomas@balena.io>
+- commits:
+    - subject: "meta: build generic x86 image"
+- commits:
+    - body: null
