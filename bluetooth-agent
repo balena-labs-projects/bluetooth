@@ -158,10 +158,9 @@ if __name__ == "__main__":
     bluez_objects = bluez_manager.GetManagedObjects()
     device_paths = dbus_filter_objects_by_interface(bluez_objects, "org.bluez.Device1")
 
-    print("Checking for known bluetooth devices...")
     for device_path in device_paths:
         props = dbus_get_all_properties("org.bluez", device_path, "org.bluez.Device1")
-        if bool(props["Paired"]) and bool(props["Trusted"]):
+        if bool(props["Paired"]):
             print("- Attempting to reconnect to %s (%s)..." % (props["Name"], props["Address"]))
 
             # Try to reconnect...
