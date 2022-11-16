@@ -11,7 +11,7 @@ The bluetooth block is a Docker image that runs a pre-configured bluetooth pairi
 - Uses DBus to communicate with balenaOS bluetooth daemon
 - Reconnect on boot to known and trusted devices
 
-Note that this block *does not* deal with the bluetooth "data layer". Your application will need to handle the data stream corresponding to the desired bluetooth profile. For example, the [`audio` block](https://github.com/balenablocks/audio) takes an already paired and connected bluetooth device and sets it up as an A2DP audio source.
+Note that this block *does not* deal with the bluetooth "data layer". Your application will need to handle the data stream corresponding to the desired bluetooth profile. For example, the [`audio` block](https://github.com/balena-labs-projects/audio) takes an already paired and connected bluetooth device and sets it up as an A2DP audio source.
 
 ## Usage
 
@@ -19,7 +19,7 @@ Note that this block *does not* deal with the bluetooth "data layer". Your appli
 
 We maintain images for this block on balenaHub Container Registry. The images can be accessed using:
 
-`bh.cr/balenablocks/bluetooth-<arch>` or `bhcr.io/balenablocks/bluetooth-<arch>` where `<arch>` is one of: `rpi`, `armv7hf`, `aarch64` or `amd64`.
+`bh.cr/balenalabs/bluetooth-<arch>` or `bhcr.io/balenalabs/bluetooth-<arch>` where `<arch>` is one of: `rpi`, `armv7hf`, `aarch64` or `amd64`.
 
 For details on how to select a specific version or commit version of the image see our [documentation](https://github.com/balena-io/open-balena-registry-proxy/#usage).
 
@@ -32,7 +32,7 @@ version: '2'
 services:
 
   bluetooth:
-    image: bh.cr/balenablocks/bluetooth-<arch>  # where <arch> is one of rpi, armv7hf, aarch64 or amd64
+    image: bh.cr/balenalabs/bluetooth-<arch>  # where <arch> is one of rpi, armv7hf, aarch64 or amd64
     network_mode: host
     cap_add:
       - NET_ADMIN
@@ -55,7 +55,7 @@ Here are some of the most common extension cases:
 - Start the bluetooth daemon from your own bash script:
 
 ```Dockerfile
-FROM bh.cr/balenablocks/bluetooth-aarch64
+FROM bh.cr/balenalabs/bluetooth-aarch64
 
 # Be sure to run exec /usr/src/bluetooth-agent in your script
 COPY start.sh /usr/src/start.sh
