@@ -76,16 +76,16 @@ The following environment variables allow some degree of configuration:
 ## Supported devices
 The bluetooth block has been tested to work on the following devices:
 
-| Device Type  | Status |
-| ------------- | ------------- |
-| Raspberry Pi 1 / Zero | |
-| Raspberry Pi Zero W | ✔ |
-| Raspberry Pi 2 | ✔ <sup>*</sup> |
-| Raspberry Pi 3 | ✔ |
-| Raspberry Pi 4 | ✔ |
-| balenaFin | ✔ |
-| Jetson Nano | ✔ <sup>*</sup> |
-| BeagleBone Black | ✔ <sup>*</sup> |
-| Intel NUC | ✔ <sup>*</sup> |
+| Device Type  | Status | Device Name |
+| ------------- | ------------- | ------------- |
+| Raspberry Pi 1 / Zero | | `raspberry-pi` |
+| Raspberry Pi Zero W | ✔ | `raspberry-pi2` |
+| Raspberry Pi 2 | ✔ <sup>*</sup> | `raspberrypi3` |
+| Raspberry Pi 3 | ✔ | `raspberrypi3-64` |
+| Raspberry Pi 4 | ✔ | `raspberrypi4-64` |
+| balenaFin | ✔ | `fincm3` |
+| Jetson Nano | ✔ <sup>*</sup> | `jetson-nano` |
+| BeagleBone Black | ✔ <sup>*</sup> | `beaglebone-black` |
+| Intel NUC | ✔ <sup>*</sup> | `intel-nuc` |
 
 *: Requires external USB bluetooth dongle
